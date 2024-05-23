@@ -1,0 +1,29 @@
+{# templates/stream/tomorrow.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Streams de demain{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Streams de demain</h1>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Nom du jeu</th>
+                <th>Nom de l'utilisateur</th>
+                <th>Heure de début</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for stream in streams %}
+                <tr>
+                    <td>{{ stream.jeu.name }}</td>
+                    <td>{{ stream.user.pseudo }}</td>
+                    <td>{{ stream.startDate|date('H:i') }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{# templates/stream/tomorrow.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Streams of Tomorrow</h1>
+
+    <ul>
+        {% for stream in streams %}
+            <li>
+                <h2>{{ stream.gameName }}</h2>
+                <p>Streamed by: {{ stream.user.username }}</p>
+                <p>Starts at: {{ stream.startTime|date('H:i') }}</p>
+            </li>
+        {% else %}
+            <li>No streams scheduled for tomorrow.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

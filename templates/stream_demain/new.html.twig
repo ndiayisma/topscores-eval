@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New StreamDemain{% endblock %}
+
+{% block body %}
+    <h1>Create new StreamDemain</h1>
+
+    {{ include('stream_demain/_form.html.twig') }}
+
+    <a href="{{ path('app_stream_demain_index') }}">back to list</a>
+{% endblock %}
